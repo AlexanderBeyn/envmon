@@ -79,8 +79,8 @@ struct {
   {"help", cli_cmd_help, "- Print a list of commands"},
   {"format", cli_cmd_format, "- Format the filesystem"},
   {"save", cli_cmd_save, "- Save configuration to the filesystem"},
-  {"set wifi ssid", cli_cmd_set_wifi_ssid, " <SSID> - Set WiFi SSID"},
-  {"set wifi password", cli_cmd_set_wifi_password, " <PASSWORD> - Set WiFi password"},
+  {"set wifi ssid", cli_cmd_set_wifi_ssid, "<SSID> - Set WiFi SSID"},
+  {"set wifi password", cli_cmd_set_wifi_password, "<PASSWORD> - Set WiFi password"},
   {"show config", cli_cmd_show_config, "- Show loaded configuration"},
   {"show fs", cli_cmd_show_fs, "- Show filesystem information"},
   {"show network", cli_cmd_show_network, "- Show network information"},
@@ -91,7 +91,7 @@ struct {
 
 static void cli_cmd_help(String args) {
   for (int i = 0; cli_commands[i].command != NULL; i++) {
-    Serial << cli_commands[i].command << cli_commands[i].description << endl;
+    Serial << cli_commands[i].command << " " << cli_commands[i].description << endl;
   }
 }
 
